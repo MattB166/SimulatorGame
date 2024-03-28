@@ -22,19 +22,27 @@ public class PlayerMovement : MonoBehaviour
     [Range(1, 10)] public float runSpeed = 10;
     [Range(1, 10)] public float stealthSpeed = 2;
     [Range(1, 10)] public float stamina = 15;
+    [Range(1, 10)] public float jumpHeight = 10;
     [HideInInspector] public Vector2 input;
     private float maxStamina;
+  
+    private bool jumpInput;
+    [HideInInspector] public bool isGrounded;
+    private float yVelocity;
+
 
     [Header("Jumping Components")]
     private bool isJumping;
     [Range(-20f, -0.05f)] public float gravity;
     [Range(0.1f, 0.5f)] public float groundCheckDistance;
     public LayerMask groundLayer;
+    private Transform groundCheck;
 
     private void Start()
     {
-       controller = GetComponent<CharacterController>();
-        
+        controller = GetComponent<CharacterController>();
+        groundCheck = transform.Find("Ground Check");
+
         InitialisePlayer();
     }
 
@@ -42,14 +50,21 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 move = Move();
 
-        controller.Move(new Vector3(move.x, 0, move.z) * Time.deltaTime);  //need to alter y value to represent y velocity 
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckDistance, groundLayer);
+      
+        if (isGrounded && yVelocity < 0) yVelocity = -2;
+        Jump();
+        yVelocity += gravity * Time.deltaTime;
+
+        controller.Move(new Vector3(move.x, yVelocity, move.z) * Time.deltaTime);  //need to alter y value to represent y velocity 
+
     }
 
     /// <summary>
     /// Initialises the player to starting values
     /// </summary>
     private void InitialisePlayer()
-    { 
+    {
         ////initialise starting values here 
     }
 
@@ -61,20 +76,27 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
-        
-        if(context.performed)
+        if (isGrounded && context.performed)
+            jumpInput = true;
+        else if (context.canceled)
+            jumpInput = false;
+    }
+
+    private void Jump()
+    {
+        if (jumpInput)
         {
-           
-           
+            yVelocity = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            Debug.Log("Jumping");
+            jumpInput = false;
         }
-        
     }
 
     private Vector3 Move()
     {
         Vector3 movement = transform.right * input.x + transform.forward * input.y;
         movement.Normalize();
-        movement*= walkSpeed;
+        movement *= walkSpeed;
         return movement;
 
 
