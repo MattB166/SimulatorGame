@@ -11,7 +11,7 @@ public enum PlayerRanks
     Paratrooper,//fight in combat zones
     Lieutenant, //give orders to small groups of soldiers, take orders from the general
     General,    //give orders to lieutenants, take orders from the fuhrer 
-    Fuhrer,     //control absolutely everything. Tactics, law, police, people within organisation. 
+    Fuhrer,     //control absolutely everything. Tactics, law, police, people within organisation. Can even take down the monarchy 
     Prisoner,   //if overthrown by those below you, can spend time in jail. 
     King        //can rebel against the royals and take over the throne. have to have a LOT of public support 
 }
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InitialisePlayer();
     }
 
     // Update is called once per frame
@@ -42,9 +42,25 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Sets base values of player
+    /// </summary>
     void InitialisePlayer()
     {
         currentRank = PlayerRanks.Rookie;
         ///either cache the starting stats manually or by choice of external SO from different player options 
+    }
+
+    /// <summary>
+    /// Switches the rank of the player 
+    /// </summary>
+    /// <param name="rank"></param>
+    public void ChangeRank(PlayerRanks rank)
+    {
+        if (currentRank == rank) return;
+        else
+        {
+            currentRank = rank;
+        }
     }
 }
