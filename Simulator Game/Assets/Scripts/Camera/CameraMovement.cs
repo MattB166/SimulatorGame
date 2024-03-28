@@ -11,7 +11,7 @@ public class CameraMovement : MonoBehaviour
     private GameObject player;
     private Transform followPos;
     public Vector3 offset;
-    private float smoothDelta = 0.01f;
+    private float smoothDelta = 0.1f;
     private Quaternion targetRot;
     
     // Start is called before the first frame update
