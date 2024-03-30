@@ -24,11 +24,11 @@ public class PlayerController : MonoBehaviour
     public PlayerRanks currentRank;
     public float PlayerHealth { get; private set; }
     
-    [HideInInspector] public float Influence { get; private set; }
-    [HideInInspector] public float Intelligence { get; private set; }
-    [HideInInspector] public float Morality { get; private set; }
-    [HideInInspector] public float Leadership {  get; private set; }
-    [HideInInspector] public float Strength { get; private set; }
+    [HideInInspector] public int Influence { get; private set; }
+    [HideInInspector] public int Intelligence { get; private set; }
+    [HideInInspector] public int Morality { get; private set; }
+    [HideInInspector] public int Leadership {  get; private set; }
+    [HideInInspector] public int Strength { get; private set; }
 
     // Start is called before the first frame update
     void Start()

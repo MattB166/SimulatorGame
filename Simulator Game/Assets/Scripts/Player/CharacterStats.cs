@@ -15,16 +15,16 @@ public class CharacterStats : ScriptableObject
     public string Description;
     
     [Header("Physical Atrributes")]
-    [Range(1, 20)] public float Speed;
-    [Range(1, 20)] public float Strength;
+    [Range(1, 20)] public int Speed;
+    [Range(1, 20)] public int Strength;
 
     [Space(20)]
     [Header("Mental Attributes")]
-    [Range(1,20)] public float Intelligence;
+    [Range(1,20)] public int Intelligence;
 
 
     [Space(20)]
     [Header("Social Attributes")]
-    [Range(1, 20)] public float Influence;
-    [Range(1, 20)] public float Tolerance;
+    [Range(1, 20)] public int Influence;
+    [Range(1, 20)] public int Tolerance;
 }
