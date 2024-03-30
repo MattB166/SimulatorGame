@@ -30,6 +30,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public int Leadership {  get; private set; }
     [HideInInspector] public int Strength { get; private set; }
 
+    [HideInInspector] public int Speed { get; private set; }
+
+    [HideInInspector] public int Tolerance { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {

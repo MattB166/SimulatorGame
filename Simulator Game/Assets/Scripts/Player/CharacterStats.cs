@@ -27,4 +27,8 @@ public class CharacterStats : ScriptableObject
     [Header("Social Attributes")]
     [Range(1, 20)] public int Influence;
     [Range(1, 20)] public int Tolerance;
+
+    [Space(20)]
+    [Header("Morality")]
+    [Range(1, 100)] public int Morality;
 }
