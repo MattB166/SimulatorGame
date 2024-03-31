@@ -34,4 +34,28 @@ public class CharacterStats : ScriptableObject
     [Space(20)]
     [Header("Morality")]
     [Range(1, 100)] public int Morality;
+
+    //public enum Stats
+    //{
+    //    Speed,
+    //    Strength,
+    //    Damage,
+    //    Intelligence,
+    //    Leadership,
+    //    Influence,
+    //    Tolerance,
+    //    Morality
+    //}
+
+    //public Dictionary<Stats, int> Attributes = new() //stores all the attributes of the character
+    //{
+    //    {Stats.Speed, 0},
+    //    { Stats.Strength, 0},
+    //    { Stats.Damage, 0},
+    //    { Stats.Intelligence, 0},
+    //    { Stats.Leadership, 0},
+    //    { Stats.Influence, 0},
+    //    { Stats.Tolerance, 0},
+    //    { Stats.Morality, 0}
+    //};
 }

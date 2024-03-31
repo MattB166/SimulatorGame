@@ -13,14 +13,6 @@ public enum GameMode
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    [System.Serializable]
-    public struct Tasks
-    {
-        public PlayerRanks rank;
-        public List<string> tasks; //change to another type of some sort. will need to move to a task manager script
-        ///SO denoting task stats and rules 
-    }
-    public List<Tasks> PossibleTasks = new(); 
     public static GameManager instance;
     public float PlayerXP { get; private set; }  //used to control player level and rank
 
@@ -28,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Destroy(this);
         }
@@ -36,18 +28,36 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+
+        player = FindFirstObjectByType<PlayerController>();
+
     }
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    }
+    public void ChooseCharacter()
+    {
+        ///choose character from list of available characters 
         
     }
+
+    public void AddXP(float xp)
+    {
+        PlayerXP += xp;
+        ///check if player has levelled up 
+        ///    }
+    }
+
+ 
 }

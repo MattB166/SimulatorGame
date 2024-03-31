@@ -23,6 +23,7 @@ public enum PlayerRanks
 public class PlayerController : MonoBehaviour
 {
     public PlayerRanks currentRank;
+    private CharacterStats playerStats;
 
     [HideInInspector] public string PlayerName { get; private set; }
     public float PlayerHealth { get; private set; }
@@ -57,6 +58,15 @@ public class PlayerController : MonoBehaviour
     {
         currentRank = PlayerRanks.Rookie;
         SetHealth(maxHealth);
+        PlayerName = playerStats.CharacterName;
+        Influence = playerStats.Influence;
+        Intelligence = playerStats.Intelligence;
+        Morality = playerStats.Morality;
+        Leadership = playerStats.Leadership;
+        Strength = playerStats.Strength;
+        Speed = playerStats.Speed;
+        Tolerance = playerStats.Tolerance;
+
         ///either cache the starting stats manually or by choice of external SO from different player options 
     }
 
@@ -72,6 +82,8 @@ public class PlayerController : MonoBehaviour
             currentRank = rank;
         }
     }
+
+   
 
     public void SetHealth(float health)
     {
