@@ -6,6 +6,7 @@ public enum PlayerRanks
     Rookie,     //tutorial
     Pawn,       //basic tasks like painting, filing 
     Messenger,  //taking notes to higher ranking officials 
+    Police,     //patrolling streets, stopping crime
     Security,   //stopping intruders into whichever building you are guarding
     Executioner,//carry out execution of prisoners 
     Paratrooper,//fight in combat zones
@@ -22,7 +23,10 @@ public enum PlayerRanks
 public class PlayerController : MonoBehaviour
 {
     public PlayerRanks currentRank;
+
+    [HideInInspector] public string PlayerName { get; private set; }
     public float PlayerHealth { get; private set; }
+    public float maxHealth { get; private set; } = 100;
     
     [HideInInspector] public int Influence { get; private set; }
     [HideInInspector] public int Intelligence { get; private set; }
@@ -52,6 +56,7 @@ public class PlayerController : MonoBehaviour
     void InitialisePlayer()
     {
         currentRank = PlayerRanks.Rookie;
+        SetHealth(maxHealth);
         ///either cache the starting stats manually or by choice of external SO from different player options 
     }
 
@@ -67,4 +72,9 @@ public class PlayerController : MonoBehaviour
             currentRank = rank;
         }
     }
+
+    public void SetHealth(float health)
+    {
+        PlayerHealth = health;
+    }   
 }

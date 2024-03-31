@@ -17,12 +17,12 @@ public class GameManager : MonoBehaviour
     public struct Tasks
     {
         public PlayerRanks rank;
-        public List<string> tasks; //change to another type of some sort 
+        public List<string> tasks; //change to another type of some sort. will need to move to a task manager script
         ///SO denoting task stats and rules 
     }
     public List<Tasks> PossibleTasks = new(); 
     public static GameManager instance;
-    public float PlayerXP { get; private set; }
+    public float PlayerXP { get; private set; }  //used to control player level and rank
 
     private PlayerController player;
 

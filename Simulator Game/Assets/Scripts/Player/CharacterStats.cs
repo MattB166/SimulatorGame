@@ -11,16 +11,19 @@ using UnityEngine;
 public class CharacterStats : ScriptableObject
 {
     [Header("General")]
+    public string CharacterName;
     public Sprite playerImage;
     public string Description;
     
     [Header("Physical Atrributes")]
     [Range(1, 20)] public int Speed;
-    [Range(1, 20)] public int Strength;
+    [Range(1, 20)] public int Strength; //possibly not needed
+    [Range(1, 20)] public int Damage;
 
     [Space(20)]
     [Header("Mental Attributes")]
     [Range(1,20)] public int Intelligence;
+    [Range(1, 20)] public int Leadership; 
 
 
     [Space(20)]
