@@ -14,16 +14,15 @@ public class CharacterStats : ScriptableObject
     public string CharacterName;
     public Sprite playerImage;
     public string Description;
-    
+
     [Header("Physical Atrributes")]
     [Range(1, 20)] public int Speed;
     [Range(1, 20)] public int Strength; //possibly not needed
-    [Range(1, 20)] public int Damage;
 
     [Space(20)]
     [Header("Mental Attributes")]
-    [Range(1,20)] public int Intelligence;
-    [Range(1, 20)] public int Leadership; 
+    [Range(1, 20)] public int Intelligence;
+    [Range(1, 20)] public int Leadership;
 
 
     [Space(20)]
@@ -47,7 +46,7 @@ public class CharacterStats : ScriptableObject
     //    Morality
     //}
 
-    //public Dictionary<Stats, int> Attributes = new() //stores all the attributes of the character
+    //public Dictionary<Stats, int> Attributes = new() //stores all the initial attributes of the character
     //{
     //    {Stats.Speed, 0},
     //    { Stats.Strength, 0},
@@ -58,4 +57,12 @@ public class CharacterStats : ScriptableObject
     //    { Stats.Tolerance, 0},
     //    { Stats.Morality, 0}
     //};
+
+    //public void SetAttribute(Stats stat, int value)
+    //{
+    //    Attributes[stat] = value;
+    //}
+
+
+
 }

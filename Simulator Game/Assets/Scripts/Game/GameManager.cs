@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     public void ChooseCharacter()
     {
         ///choose character from list of available characters 
-        
+
     }
 
     public void AddXP(float xp)
@@ -59,5 +59,5 @@ public class GameManager : MonoBehaviour
         ///    }
     }
 
- 
+
 }

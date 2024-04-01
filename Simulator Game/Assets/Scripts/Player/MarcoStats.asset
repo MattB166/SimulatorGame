@@ -10,10 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59529785b732b2a468f85e0a619ed050, type: 3}
-  m_Name: New Character Stats
+  m_Name: MarcoStats
   m_EditorClassIdentifier: 
+  CharacterName: 'Marco '
   playerImage: {fileID: 0}
   Description: 
   Speed: 1
-  Strength: 0
-  Intelligence: 0
+  Strength: 1
+  Intelligence: 1
+  Leadership: 1
+  Influence: 0
+  Tolerance: 0
+  Morality: 0

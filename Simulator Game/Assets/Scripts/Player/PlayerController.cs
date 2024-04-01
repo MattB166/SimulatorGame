@@ -22,9 +22,12 @@ public enum PlayerRanks
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+
+    [Header("Player Components")]
     public PlayerRanks currentRank;
     private CharacterStats playerStats;
 
+   
     [HideInInspector] public string PlayerName { get; private set; }
     public float PlayerHealth { get; private set; }
     public float maxHealth { get; private set; } = 100;
@@ -34,10 +37,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public int Morality { get; private set; }
     [HideInInspector] public int Leadership {  get; private set; }
     [HideInInspector] public int Strength { get; private set; }
-
     [HideInInspector] public int Speed { get; private set; }
-
-    [HideInInspector] public int Tolerance { get; private set; }
+ [HideInInspector] public int Tolerance { get; private set; }
 
     // Start is called before the first frame update
     void Start()
@@ -79,7 +80,36 @@ public class PlayerController : MonoBehaviour
         if (currentRank == rank) return;
         else
         {
+            ///remove old state script 
             currentRank = rank;
+            switch(currentRank)
+            {
+                case PlayerRanks.Rookie:
+                    //add specific scripts in here 
+                    break;
+                case PlayerRanks.Pawn:
+                    break;
+                case PlayerRanks.Messenger:
+                    break;
+                case PlayerRanks.Police:
+                    break;
+                case PlayerRanks.Security:
+                    break;
+                case PlayerRanks.Executioner:
+                    break;
+                case PlayerRanks.Paratrooper:
+                    break;
+                case PlayerRanks.Lieutenant:
+                    break;
+                case PlayerRanks.General:
+                    break;
+                case PlayerRanks.Fuhrer:
+                    break;
+                case PlayerRanks.Prisoner:
+                    break;
+                case PlayerRanks.King:
+                    break;
+            }
         }
     }
 
