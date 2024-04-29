@@ -8,6 +8,11 @@ public enum GameMode
     Level
 
 }
+public enum CameraMode
+{
+    RotateFollow,
+    Fixed
+}
 /// <summary>
 /// Manages all Gameplay flow and surrounding features. Central hub for all scenarios 
 /// </summary>
@@ -17,6 +22,8 @@ public class GameManager : MonoBehaviour
     public float PlayerXP { get; private set; }  //used to control player level and rank
 
     private PlayerController player;
+    private GameMode gameMode;
+    private CameraMode cameraMode;
 
     private void Awake()
     {
@@ -48,7 +55,7 @@ public class GameManager : MonoBehaviour
     }
     public void ChooseCharacter()
     {
-        ///choose character from list of available characters 
+        ///choose character from list of available characters. later version  
 
     }
 

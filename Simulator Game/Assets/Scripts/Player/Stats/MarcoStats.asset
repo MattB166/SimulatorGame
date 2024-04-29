@@ -19,6 +19,6 @@ MonoBehaviour:
   Strength: 1
   Intelligence: 1
   Leadership: 1
-  Influence: 0
+  Influence: 1
   Tolerance: 0
   Morality: 0

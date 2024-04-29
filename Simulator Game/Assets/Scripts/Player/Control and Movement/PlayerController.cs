@@ -4,13 +4,10 @@ using UnityEngine;
 public enum PlayerRanks
 {
     Rookie,     //tutorial
-    Pawn,       //basic tasks like painting, filing 
     Messenger,  //taking notes to higher ranking officials 
     Police,     //patrolling streets, stopping crime
-    Security,   //stopping intruders into whichever building you are guarding
     Executioner,//carry out execution of prisoners 
     Paratrooper,//fight in combat zones
-    Lieutenant, //give orders to small groups of soldiers, take orders from the general
     General,    //give orders to lieutenants, take orders from the fuhrer 
     Fuhrer,     //control absolutely everything. Tactics, law, police, people within organisation. Can even take down the monarchy 
     Prisoner,   //if overthrown by those below you, can spend time in jail. 
@@ -87,19 +84,13 @@ public class PlayerController : MonoBehaviour
                 case PlayerRanks.Rookie:
                     //add specific scripts in here 
                     break;
-                case PlayerRanks.Pawn:
-                    break;
                 case PlayerRanks.Messenger:
                     break;
                 case PlayerRanks.Police:
                     break;
-                case PlayerRanks.Security:
-                    break;
                 case PlayerRanks.Executioner:
                     break;
                 case PlayerRanks.Paratrooper:
-                    break;
-                case PlayerRanks.Lieutenant:
                     break;
                 case PlayerRanks.General:
                     break;

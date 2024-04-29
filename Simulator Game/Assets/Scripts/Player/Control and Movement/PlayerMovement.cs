@@ -38,11 +38,15 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
     private Transform groundCheck;
 
+    [Header("Camera Components")]
+    private Camera cam;
+
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         groundCheck = transform.Find("Ground Check");
-
+        cam = Camera.main;
         InitialisePlayer();
     }
 
@@ -94,7 +98,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 Move()
     {
-        Vector3 movement = transform.right * input.x + transform.forward * input.y;
+        Vector3 camFwd = cam.transform.forward;
+        Vector3 camRight = cam.transform.right;
+        camFwd.y = 0;
+        camRight.y = 0;
+        camFwd.Normalize();
+        camRight.Normalize();
+        Vector3 movement = camFwd * input.y + camRight * input.x;
         movement.Normalize();
         movement *= walkSpeed;
         return movement;
